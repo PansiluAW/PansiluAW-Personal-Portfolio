@@ -27,11 +27,11 @@ html, body{
 
 .seconday-title:before{
     content: "";
-    @apply block w-12 h-2 bg-theme rounded-full mb-1;
+    @apply block w-12 h-2 mb-1 rounded-full bg-theme;
 }
 
 .section-paragraph{
-    @apply text-seconday my-6 w-full max-3xl;
+    @apply w-full my-6 text-seconday max-3xl;
 }
 
 .badge{
@@ -60,4 +60,10 @@ html, body{
 
 .nav-dot:hover span{
     opacity: 1;
+}
+
+@layer components{
+    .nav-btn:hover{
+        @apply bg-theme;
+    }
 }
