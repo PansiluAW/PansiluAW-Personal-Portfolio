@@ -15,6 +15,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <link rel="icon" href="img/PW.png" type="image/png">
 
     <script>
@@ -332,7 +333,7 @@
                 <p class="mt-5 mb-10 text-center fonmt-light sm:text-xl">Do send a message and connect with me through any of the socials.</br>I'm more than happy to have a conversation!</p>
                 <div class="grid gap-0 place-items-center justify-items-center lg:grid-cols-2">
                     <div class="px-10">
-                        <form action="https://formsubmit.co/pansiluwijesiri@gmail.com" method="POST" class="w-full w-lg">
+                        <form action="https://formsubmit.co/pansiluwijesiri@gmail.com" onsubmit="return submitForm(this)" method="POST" class="w-full w-lg">
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_next" value="https://pansiluw-portfolio.onrender.com/thank-you.html">
                             <input type="hidden" name="_subject" value="Someone Sent You A New Inquiry | Personal Portfolio | Pansilu.AW">
@@ -421,32 +422,27 @@
         </footer> -->
 
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        window.addEventListener("scroll", function(){
-            var header = document.querySelector("header");
-            header.classList.toggle("sticky", window.scrollY > 0)
-        })
-       const sendButton = document.getElementById('send-btn');
-       const firstName = document.getElementById('first-name');
-       const lastName = document.getElementById('last-name');
-       const email = document.getElementById('email');
-       const message = document.getElementById('message');
-       sendButton.addEventListener('click',() => {
-        if (firstName && lastName && email && message){
-            Swal.fire(
-                'Thank You!',
-                'Your Message Was Sent Successfully!',
-                'success'
-            )
-        }else{
-            Swal.fire(
-                'Error Occurred',
-                'Please try again...',
-                'error'
-            )
+         function submitForm(form){
+            const sendButton = document.getElementById('send-btn');
+            const firstName = document.getElementById('first-name');
+            const lastName = document.getElementById('last-name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            swal({
+                title: "Thank you!",
+                text: "Your Message Was Sent Successfully.",
+                icon: "success",
+                buttons: true,
+                dangerMode: false,
+            })
+            .then((isOkay) => {
+                if (isOkay){
+                    form.submit();
+                }
+            });
+            return false
         }
-       })
         AOS.init();
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
