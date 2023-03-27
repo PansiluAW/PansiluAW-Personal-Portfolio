@@ -327,7 +327,7 @@
         </div>
         
         <div id="hire"></div>
-        <div class="items-start justify-center mt-12 md:mt-14" data-aos="zoom-in-up" data-aos-duration="1000">
+        <div class="items-start justify-center mt-12 md:mt-14" data-aos="zoom-in-up" data-aos-duration="1000" id="contact">
             <section class="mt-10 text-4xl text-center md:text-5xl">
                 <hr class="py-10 mx-10" data-aos="fade-up">              
                 <h2 id = "about-me secondary-title p-10">Contact<span class="font-bold"> Me</span></h2>  
@@ -385,7 +385,7 @@
                     <div>
                         <h1 class="flex justify-center mt-16 text-3xl font-bold lg:mt-0 text-amber-900">Connect with me</h1>
                         <div class="grid grid-cols-2 md:grid-cols-4">
-                                <div class="m-10 md:m-10" data-aos="zoom-out-up" data-aos-duration="2000">                            
+                                <div class="m-10 md:m-10" data-aos="zoom-out-up" data-aos-duration="2000" id="contact">                            
                                     <a href="https://www.linkedin.com/in/pansiluw/">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>                                
                                     </a>
@@ -449,6 +449,25 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.dots.min.js"></script>
+    <script>
+        VANTA.DOTS({
+          el: "#contact",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0x754431,
+          color2: 0x754431,
+          backgroundColor: 0xc5bfaf,
+          size: 6.20,
+          spacing: 100.00,
+          showLines: false
+        })
+        </script>
     <script>
         VANTA.BIRDS({
           el: "#bg-anima",
